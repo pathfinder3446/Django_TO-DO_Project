@@ -14,6 +14,7 @@
 
     <!-- navbar start -->
     <nav class="navbar navbar-expand-lg navbar navbar-dark ">
+
         <div class="container-fluid ">
             <a class="navbar-brand" href="/">
             <img src="{% static 'todo/images/cw_logo.png' %}" alt="Hi!" width="45" height="45">
@@ -21,7 +22,7 @@
         </div>
     </nav>
 
-    <!-- {% if messages %} 
+    {% if messages %} 
         {% for message in messages %} 
             {% if message.tags == "warning" %}
                 <div id="warning" class="message">{{ message }}</div>
@@ -29,7 +30,7 @@
                 <div id="success" class="message">{{ message }}</div>
             {% endif %} 
         {% endfor %} 
-    {% endif %} -->
+    {% endif %}
 
 
     {% block content %}

@@ -2,8 +2,10 @@
 
 {% block content %}
     <h2>TODO UPDATE</h2>
-    <form action="">
+    <form action="" method="POST" value="update">
+        {% csrf_token %}
         {{form.as_p}}
+        <input type="submit" valuE="update">
     </form>
 
 
