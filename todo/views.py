@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from todo.models import Todo
@@ -24,3 +25,13 @@ def todo_create(request):
         "form" : form
     }
     return render(request, "todo/todo_add.html", context)
+
+def todo_update(request,id):
+    todo = Todo.objects.get(id=id)
+    form = TodoForm(instance=todo)
+
+    context = {
+        "todo" : todo,
+        "form" : form
+    }
+    return render(request, "todo/todo_update.html", context)
